@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sea.dao.OperLogMapper">
+
+    <select id="queryOperLog" resultType="operLog">
+        select * from sys_oper_log
+    </select>
+
+    <insert id="addOperLog" parameterType="operLog">
+        insert into sys_oper_log (oper_id,classname,method,request_method,operator_type,oper_name,oper_url,oper_ip,json_result,oper_time)
+        values (#{operId},#{classname},#{method},#{requestMethod},#{operatorType},#{operName},#{operUrl},#{operIp},#{jsonResult},#{operTime})
+    </insert>
+</mapper>

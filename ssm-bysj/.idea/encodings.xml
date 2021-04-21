@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding" defaultCharsetForPropertiesFiles="UTF-8" addBOMForNewFiles="with BOM">
+    <file url="file://$PROJECT_DIR$/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/sea/aop/LogAop.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/sea/aop/LoggerAnno.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/sea/common/Constants.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/sea/common/IpAddr.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/sea/controller/DeptController.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/sea/controller/LoginController.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/sea/controller/NoticeController.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/sea/controller/OperLogController.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/sea/controller/PasswordController.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/sea/controller/PostController.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/sea/controller/RoleController.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/sea/controller/UserController.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/sea/dao/DeptMapper.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/sea/dao/NoticeMapper.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/sea/dao/OperLogMapper.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/sea/dao/PostMapper.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/sea/dao/RoleMapper.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/sea/dao/UserRoleMapper.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/sea/interceptor/LoginIntercepor.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/sea/pojo/OperLog.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/sea/pojo/UserRole.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/sea/service/DeptService.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/sea/service/NoticeService.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/sea/service/OperLogService.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/sea/service/PostService.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/sea/service/RoleService.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/sea/service/impl/DeptServiceImpl.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/sea/service/impl/NoticeServiceImpl.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/sea/service/impl/OperLogServiceImpl.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/sea/service/impl/PostServiceImpl.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/sea/service/impl/RoleServiceImpl.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/sea/shiro/MyFormAuthenticationFilter.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/sea/shiro/ShiroRealm.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/resources" charset="UTF-8" />
+    <file url="PROJECT" charset="UTF-8" />
+  </component>
+</project>

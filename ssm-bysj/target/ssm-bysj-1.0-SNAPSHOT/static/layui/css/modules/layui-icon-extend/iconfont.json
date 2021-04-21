@@ -1,0 +1,79 @@
+{
+  "id": "2455437",
+  "name": "bs",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "738193",
+      "name": "公告",
+      "font_class": "gonggao",
+      "unicode": "e61e",
+      "unicode_decimal": 58910
+    },
+    {
+      "icon_id": "8605740",
+      "name": "角色权限",
+      "font_class": "jiaosequanxian",
+      "unicode": "e666",
+      "unicode_decimal": 58982
+    },
+    {
+      "icon_id": "9512530",
+      "name": "日志",
+      "font_class": "daily-fill",
+      "unicode": "e619",
+      "unicode_decimal": 58905
+    },
+    {
+      "icon_id": "16429132",
+      "name": "后台管理-系统管理员",
+      "font_class": "houtaiguanli-xitongguanliyuan",
+      "unicode": "e6dc",
+      "unicode_decimal": 59100
+    },
+    {
+      "icon_id": "1601920",
+      "name": "员工",
+      "font_class": "yuangong",
+      "unicode": "e668",
+      "unicode_decimal": 58984
+    },
+    {
+      "icon_id": "3040356",
+      "name": "密码修改",
+      "font_class": "mimaxiugai",
+      "unicode": "e6d1",
+      "unicode_decimal": 59089
+    },
+    {
+      "icon_id": "3881875",
+      "name": "包,职业,职位",
+      "font_class": "bao",
+      "unicode": "e767",
+      "unicode_decimal": 59239
+    },
+    {
+      "icon_id": "11855332",
+      "name": "部门管理",
+      "font_class": "bumenguanli",
+      "unicode": "e621",
+      "unicode_decimal": 58913
+    },
+    {
+      "icon_id": "16401933",
+      "name": "首页",
+      "font_class": "biaoqiankuozhan_shouye-381",
+      "unicode": "ebee",
+      "unicode_decimal": 60398
+    },
+    {
+      "icon_id": "17400386",
+      "name": "退出系统",
+      "font_class": "tuichuxitong",
+      "unicode": "e613",
+      "unicode_decimal": 58899
+    }
+  ]
+}

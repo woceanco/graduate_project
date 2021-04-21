@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- 注入自定义Realm对象(用户IDRealm) -->
+    <bean id="shiroRealm" class="com.sea.shiro.ShiroRealm"></bean>
+    <!--缓存-->
+    <bean id="cacheManager" class="org.apache.shiro.cache.MemoryConstrainedCacheManager"></bean>
+    <!-- 注入安全管理器 -->
+    <bean id="securityManager" class="org.apache.shiro.web.mgt.DefaultWebSecurityManager">
+        <property name="cacheManager" ref="cacheManager"/>
+        <property name="realm" ref="shiroRealm"></property>
+    </bean>
+
+    <!-- 配置授权属性 -->
+    <bean class="org.apache.shiro.spring.security.interceptor.AuthorizationAttributeSourceAdvisor">
+        <property name="securityManager" ref="securityManager" />
+    </bean>
+
+    <bean class="org.springframework.beans.factory.config.MethodInvokingFactoryBean">
+        <property name="staticMethod" value="org.apache.shiro.SecurityUtils.setSecurityManager" />
+        <property name="arguments" ref="securityManager" />
+    </bean>
+
+    <!-- 配置shiro的过滤器链(拦截)  id必须和web.xml中的 shiro 拦截器名一致-->
+    <bean id="shiroFilter" class="org.apache.shiro.spring.web.ShiroFilterFactoryBean">
+        <!-- Shiro的核心安全接口,这个属性是必须的 -->
+        <property name="securityManager" ref="securityManager" />
+        <!-- 身份认证失败，则跳转到登录页面的配置 -->
+        <property name="loginUrl" value="/login" />
+        <!-- 权限认证失败，则跳转到指定页面 -->
+        <property name="unauthorizedUrl" value="/unauthorized.jsp" />
+        <!-- 登录成功后的页面 -->
+        <property name="successUrl" value="/welcome" />
+        <!-- 配置放行规则 -->
+        <property name="filterChainDefinitions">
+            <value>
+                #不需要认证
+                /logincheck = anon
+                /resources/** = anon
+                /static/** = anon
+                /static/calendar/** = anon
+                /static/css/** = anon
+                /static/layui/** = anon
+                /static/js/** = anon
+                /static/images/** = anon
+                #权限授权拦截
+                #/home/superAdminByFilter = perms["superAdmin"]
+
+                #需要认证
+                /** = authc
+                /logout = logout
+                /exit = logout
+            </value>
+        </property>
+    </bean>
+
+
+</beans>

@@ -8,6 +8,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
+@RequestMapping("/pwd")
 public class PasswordController {
 
     @Autowired
@@ -29,6 +30,7 @@ public class PasswordController {
 
     @RequestMapping("/pwdmodify")
     public String pwdModify(){
+        System.out.println("pwdddddddddddddd");
         return "user/pwdmodify";
     }
 }

@@ -1,4 +1,4 @@
-﻿<%@ page language="java" contentType="text/html; charset=UTF-8"
+﻿﻿<%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8" %>
 <%@include file="/jsp/common/head.jsp" %>
 <div class="right">
@@ -27,7 +27,7 @@
             </c:if>
         </p>
         <strong>公告内容：</strong>
-        <p>${notice.noticeContent}</p>
+        <p style="border: #a59b9b solid 1px;margin: 0 10px">${notice.noticeContent}</p>
         <div class="providerAddBtn">
             <input type="button" id="back" name="back" value="返回">
         </div>

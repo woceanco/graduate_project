@@ -42,6 +42,11 @@ public class RoleServiceImpl implements RoleService {
     }
 
     @Override
+    public Role selectRoleByUser(Integer userId) {
+        return roleMapper.selectRoleByUser(userId);
+    }
+
+    @Override
     public boolean addRole(Role role) {
         User loginuser = (User) WebUtils.getSessionAttribute(request, Constants.USER_SESSION);
         role.setStatus(0);

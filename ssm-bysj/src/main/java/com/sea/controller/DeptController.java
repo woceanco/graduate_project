@@ -83,7 +83,6 @@ public class DeptController {
     }
 
     @RequestMapping("/add")
-    @ResponseBody
     public String add(Dept dept,Model model){
 
         boolean result = deptService.addDept(dept);

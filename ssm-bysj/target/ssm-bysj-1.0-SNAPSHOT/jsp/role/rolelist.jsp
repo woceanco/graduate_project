@@ -1,4 +1,4 @@
-﻿<%@ page language="java" contentType="text/html; charset=UTF-8" isELIgnored="false"
+﻿﻿<%@ page language="java" contentType="text/html; charset=UTF-8" isELIgnored="false"
          pageEncoding="UTF-8"%>
 <%@include file="/jsp/common/head.jsp"%>
 
@@ -40,8 +40,8 @@
                 <td>
 						<span>
 							<c:if test="${role.dataScope == 1}">全部数据权限</c:if>
-							<c:if test="${role.dataScope == 2}">员工信息权限</c:if>
-							<c:if test="${role.dataScope == 3}">个人数据权限</c:if>
+							<c:if test="${role.dataScope == 2}">个人数据权限</c:if>
+							<c:if test="${role.dataScope == 3}">员工信息权限</c:if>
 						</span>
                 </td>
                 <td>

@@ -11,11 +11,11 @@
           <form id="providerForm" name="providerForm" method="post" action="${pageContext.request.contextPath }/dept/updatedept">
               <input type="hidden" name="deptId" value="${dept.deptId}"/>
               <!--div的class 为error是验证错误，ok是验证成功-->
-              <div class="">
+              <%--<div class="">
                   <label for="deptCode">部门编码：</label>
                   <input type="text" name="deptCode" id="deptCode" value="${dept.deptCode }" readonly="readonly">
                   <font color="red"></font>
-              </div>
+              </div>--%>
               <div>
                   <label for="deptName">部门名称：</label>
                  <input type="text" name="deptName" id="deptName" value="${dept.deptName }">

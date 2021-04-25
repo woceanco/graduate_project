@@ -12,6 +12,12 @@
 				<input type="hidden" name="method" value="add">
                 <!--div的class 为error是验证错误，ok是验证成功-->
                 <div>
+                    <label for="loginName">员工姓名：</label>
+                    <input type="text" name="loginName" id="loginName" value="">
+                    <!-- 放置提示信息 -->
+                    <font color="red"></font>
+                </div>
+                <div>
                     <label for="userName">员工姓名：</label>
                     <input type="text" name="userName" id="userName" value="">
 					<!-- 放置提示信息 -->

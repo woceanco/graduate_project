@@ -7,8 +7,8 @@ var saveBtn = null;
 var backBtn = null;
 
 $(function(){
-	deptCode  =$("#proCode");
-	deptName   = $("#proContact");
+	deptCode  =$("#deptCode");
+	deptName   = $("#deptName");
 	deptLeader = $("#leader");
 	deptPhone  = $("#phone");
 	deptEmail  = $("#email");
@@ -27,7 +27,7 @@ $(function(){
 	 * 失焦\获焦
 	 * jquery的方法传递
 	 */
-	deptCode.bind("blur",function(){
+	/*deptCode.bind("blur",function(){
 
 		$.ajax({
 			type:"GET",//请求类型
@@ -45,10 +45,10 @@ $(function(){
 				validateTip(deptCode.next(),{"color":"red"},imgNo+" 您访问的页面不存在",false);
 			}
 		});
-	});
+	});*/
 
 	deptName.on("focus",function(){
-		validateTip(deptName.next(),{"color":"#666666"},"* 请输入",false);
+		validateTip(deptName.next(),{"color":"#666666"},"* 请输入名称",false);
 	}).on("blur",function(){
 		if(deptName.val() != null && deptName.val() != ""){
 			validateTip(deptName.next(),{"color":"green"},imgYes,true);
@@ -56,6 +56,17 @@ $(function(){
 			validateTip(deptName.next(),{"color":"red"},imgNo+" 不能为空，请重新输入",false);
 		}
 		
+	});
+
+	deptLeader.on("focus",function(){
+		validateTip(deptLeader.next(),{"color":"#666666"},"* 请输入领导",false);
+	}).on("blur",function(){
+		if(deptLeader.val() != null && deptLeader.val() != ""){
+			validateTip(deptLeader.next(),{"color":"green"},imgYes,true);
+		}else{
+			validateTip(deptLeader.next(),{"color":"red"},imgNo+" 不能为空，请重新输入",false);
+		}
+
 	});
 
 	deptPhone.on("focus",function(){
@@ -82,9 +93,10 @@ $(function(){
 
 
 	saveBtn.on("click",function(){
-		if(deptCode.attr("validateStatus") != "true"){
+		/*if(deptCode.attr("validateStatus") != "true"){
 			deptCode.blur();
-		}else if(deptName.attr("validateStatus") != "true"){
+		}else */
+		if(deptName.attr("validateStatus") != "true"){
 			deptName.blur();
 		}else if(deptLeader.attr("validateStatus") != "true"){
 			deptLeader.blur();

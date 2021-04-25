@@ -15,6 +15,8 @@ public interface RoleMapper {
 
     Role queryRoleByKey(@Param("roleKey") String roleKey);
 
+    Role selectRoleByUser(@Param("userId") Integer userId);
+
     boolean addRole(Role role);
 
     boolean delRole(@Param("roleId") int id);

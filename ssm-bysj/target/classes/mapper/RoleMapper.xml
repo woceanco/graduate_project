@@ -15,12 +15,17 @@
     <select id="queryRoleById" resultType="role">
         select * from bysj.sys_role
         where role_id = #{roleId}
-
     </select>
+
     <select id="queryRoleByKey" resultType="role">
         select * from bysj.sys_role
         where role_key = #{roleKey}
+    </select>
 
+    <select id="selectRoleByUser" parameterType="int" resultType="role">
+        select * from sys_role as sr
+                          left join sys_user_role as sur on sur.role_id = sr.role_id
+        where user_id = #{userId}
     </select>
 
     <insert id="addRole" parameterType="role">

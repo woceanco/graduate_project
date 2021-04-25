@@ -1,4 +1,4 @@
-﻿<%@ page language="java" contentType="text/html; charset=UTF-8"
+﻿﻿<%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8"%>
 <%@include file="/jsp/common/head.jsp"%>
 
@@ -17,8 +17,8 @@
             <div>
                 <label >公告类型：</label>
                 <select name="noticeType" id="noticeType">
-                    <option value="1" selected="selected">正常</option>
-                    <option value="2">停用</option>
+                    <option value="1" selected="selected">通知</option>
+                    <option value="2">公告</option>
                 </select>
             </div>
             <div>

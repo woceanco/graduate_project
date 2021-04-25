@@ -26,7 +26,7 @@
         update sys_notice
         <set>
             <if test="noticeTitle!=null and noticeTitle!=''">
-                notice_tetle=#{noticeTitle},
+                notice_title=#{noticeTitle},
             </if>
             <if test="noticeType!=null and noticeType!=''">
                 notice_type=#{noticeType},

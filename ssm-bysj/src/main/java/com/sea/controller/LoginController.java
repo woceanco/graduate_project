@@ -53,7 +53,7 @@ public class LoginController {
                 subject.login(token);
                 System.out.println("loginController---------");
                 map.put("result", "success");
-                User user = userService.queryByLogin(loginName);
+                User user = userService.queryByLoginName(loginName);
                 subject.getSession().setAttribute(Constants.USER_SESSION,user);
             }catch (UnknownAccountException ex) {
                 //用户名不存在
@@ -77,10 +77,10 @@ public class LoginController {
         return "login";
     }*/
 
-    @LoggerAnno(operatorType = "退出登录")
+    //@LoggerAnno(operatorType = "退出登录")
     @RequestMapping("/exit")
     public String exit() {
-        //SecurityUtils.getSubject().logout();
+        SecurityUtils.getSubject().logout();
         return "login";
     }
 }

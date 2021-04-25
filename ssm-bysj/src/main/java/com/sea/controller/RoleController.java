@@ -19,7 +19,7 @@ import java.util.List;
 import java.util.Map;
 
 @Controller
-@RequestMapping("role")
+@RequestMapping("/role")
 public class RoleController {
 
     @Autowired
@@ -52,6 +52,7 @@ public class RoleController {
     }
 
     @RequestMapping("/delete")
+    @ResponseBody
     public String delete(Integer roleId,Model model) throws JsonProcessingException {
 
         ObjectMapper mapper = new ObjectMapper();
@@ -66,7 +67,6 @@ public class RoleController {
     }
 
     @RequestMapping("/add")
-    @ResponseBody
     public String add(Role role,Model model){
         boolean result = roleService.addRole(role);
         if (result){
@@ -88,10 +88,10 @@ public class RoleController {
         boolean result = roleService.updateRole(role);
         if (result){
             model.addAttribute("result",true);
-            return "redirect:/user/list";
+            return "redirect:/role/list";
         }
         model.addAttribute("result",false);
-        return "redirect:user/update";
+        return "redirect:/role/update";
     }
 
     @RequestMapping("/roleKey")

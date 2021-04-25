@@ -68,7 +68,7 @@
         delete from sys_dept where dept_id=#{deptId}
     </delete>
 
-    <select id="checkDeptExistUser" parameterType="Long" resultType="int">
+    <select id="checkDeptExistUser" parameterType="int" resultType="int">
         select count(1) from sys_user where dept_id = #{deptId}
     </select>
 </mapper>

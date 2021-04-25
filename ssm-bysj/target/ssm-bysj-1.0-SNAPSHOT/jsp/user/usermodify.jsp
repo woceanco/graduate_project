@@ -28,7 +28,7 @@
             </div>
 			 <div>
                     <label >性别：</label>
-                    <select name="gender" id="gender">
+                    <select name="sex" id="sex">
 						<c:choose>
 							<c:when test="${user.sex == 0 }">
 								<option value="0" selected="selected">男</option>

@@ -1,4 +1,4 @@
-﻿<%@ page language="java" contentType="text/html; charset=UTF-8"
+﻿﻿<%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8"%>
 <%@include file="/jsp/common/head.jsp"%>
 
@@ -15,6 +15,21 @@
                 <label for="noticeTitle">公告标题：</label>
                 <input type="text" name="noticeTitle" id="noticeTitle" value="${notice.noticeTitle}">
                 <font color="red"></font>
+            </div>
+            <div>
+                <label >公告类型：</label>
+                <select name="noticeType" id="noticeType">
+                    <c:choose>
+                        <c:when test="${notice.noticeType == 0}">
+                            <option value="0" selected="selected">通知</option>
+                            <option value="1">公告</option>
+                        </c:when>
+                        <c:otherwise>
+                            <option value="0">通知</option>
+                            <option value="1" selected="selected">公告</option>
+                        </c:otherwise>
+                    </c:choose>
+                </select>
             </div>
             <div>
                 <label >公告状态：</label>

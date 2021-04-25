@@ -2,6 +2,7 @@
          pageEncoding="UTF-8" isELIgnored="false" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
+<%@ taglib prefix="shiro" uri="http://shiro.apache.org/tags" %>
 <!DOCTYPE html>
 <html>
 <head lang="en">
@@ -44,47 +45,72 @@
                     <svg class="icon" aria-hidden="true">
                         <use xlink:href="#icon-biaoqiankuozhan_shouye-381"></use>
                     </svg>
-                    <a href="${pageContext.request.contextPath }/welcome">信息管理首页</a></li>
-                <li>
-                    <svg class="icon" aria-hidden="true">
-                        <use xlink:href="#icon-bumenguanli"></use>
-                    </svg>
-                    <a href="${pageContext.request.contextPath }/dept/list">部门信息管理</a></li>
-                <li>
-                    <svg class="icon" aria-hidden="true">
-                        <use xlink:href="#icon-bao"></use>
-                    </svg>
-                    <a href="${pageContext.request.contextPath }/post/list">职位信息管理</a></li>
-                <li>
-                    <svg class="icon" aria-hidden="true">
-                        <use xlink:href="#icon-yuangong"></use>
-                    </svg>
-                    <a href="${pageContext.request.contextPath }/user/list">员工信息管理</a></li>
-                <li>
-                    <svg class="icon" aria-hidden="true">
-                        <use xlink:href="#icon-daily-fill"></use>
-                    </svg>
-                    <a href="${pageContext.request.contextPath }/operlog/list">日志管理页面</a></li>
-                <li>
-                    <svg class="icon" aria-hidden="true">
-                        <use xlink:href="#icon-jiaosequanxian"></use>
-                    </svg>
-                    <a href="${pageContext.request.contextPath }/role/list">角色管理页面</a></li>
-                <li>
-                    <svg class="icon" aria-hidden="true">
-                        <use xlink:href="#icon-gonggao"></use>
-                    </svg>
-                    <a href="${pageContext.request.contextPath }/notice/list">公告管理页面</a></li>
+                    <a href="${pageContext.request.contextPath }/welcome">信息管理首页</a>
+                </li>
+                <shiro:hasRole name="admin">
+                    <li>
+                        <svg class="icon" aria-hidden="true">
+                            <use xlink:href="#icon-bumenguanli"></use>
+                        </svg>
+                        <a href="${pageContext.request.contextPath }/dept/list">部门信息管理</a>
+                    </li>
+                    <li>
+                        <svg class="icon" aria-hidden="true">
+                            <use xlink:href="#icon-bao"></use>
+                        </svg>
+                        <a href="${pageContext.request.contextPath }/post/list">职位信息管理</a>
+                    </li>
+                </shiro:hasRole>
+                <shiro:hasAnyRoles name="admin,manager">
+                    <li>
+                        <svg class="icon" aria-hidden="true">
+                            <use xlink:href="#icon-yuangong"></use>
+                        </svg>
+                        <a href="${pageContext.request.contextPath }/user/list">员工信息管理</a>
+                    </li>
+                </shiro:hasAnyRoles>
+                <shiro:hasAnyRoles name="admin,manager">
+                    <li>
+                        <svg class="icon" aria-hidden="true">
+                            <use xlink:href="#icon-daily-fill"></use>
+                        </svg>
+                        <a href="${pageContext.request.contextPath }/operlog/list">日志管理页面</a>
+                    </li>
+                    <li>
+                        <svg class="icon" aria-hidden="true">
+                            <use xlink:href="#icon-jiaosequanxian"></use>
+                        </svg>
+                        <a href="${pageContext.request.contextPath }/role/list">角色管理页面</a>
+                    </li>
+                </shiro:hasAnyRoles>
+                <shiro:hasRole name="admin">
+                    <li>
+                        <svg class="icon" aria-hidden="true">
+                            <use xlink:href="#icon-gonggao"></use>
+                        </svg>
+                        <a href="${pageContext.request.contextPath }/notice/list">公告管理页面</a>
+                    </li>
+                </shiro:hasRole>
+                <shiro:lacksRole name="admin">
+                    <li>
+                        <svg class="icon" aria-hidden="true">
+                            <use xlink:href="#icon-gonggao"></use>
+                        </svg>
+                        <a href="${pageContext.request.contextPath }/notice/info">公告信息页面</a>
+                    </li>
+                </shiro:lacksRole>
                 <li>
                     <svg class="icon" aria-hidden="true">
                         <use xlink:href="#icon-mimaxiugai"></use>
                     </svg>
-                    <a href="${pageContext.request.contextPath }/user/pwdmodify.jsp">密码修改</a></li>
+                    <a href="${pageContext.request.contextPath }/pwd/pwdmodify">密码修改</a>
+                </li>
                 <li>
                     <svg class="icon" aria-hidden="true">
                         <use xlink:href="#icon-tuichuxitong"></use>
                     </svg>
-                    <a href="${pageContext.request.contextPath }/exit">退出系统</a></li>
+                    <a href="${pageContext.request.contextPath }/exit">退出系统</a>
+                </li>
             </ul>
         </nav>
     </div>

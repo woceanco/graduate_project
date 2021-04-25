@@ -47,6 +47,27 @@ public class NoticeController {
         return "notice/noticelist";
     }
 
+    @RequestMapping("/info")
+    public String info(Model model,@RequestParam(required = false) String pageIndex){
+
+        int pageNum;
+        if (pageIndex==null){
+            pageNum = 1 ;
+        }else {
+            pageNum = Integer.parseInt(pageIndex);
+        }
+        PageHelper.startPage(pageNum, 8);
+        List<Notice> noticeList = noticeService.queryNotice();
+        PageInfo<Notice> pageInfo = new PageInfo<>(noticeList);
+
+        model.addAttribute("noticeList",noticeList);
+        model.addAttribute("totalCount",pageInfo.getTotal());
+        model.addAttribute("currentPageNo",pageInfo.getPageNum());
+        model.addAttribute("totalPageCount",pageInfo.getPages());
+
+        return "notice/noticeinfo";
+    }
+
     @RequestMapping("/view")
     public String view(@RequestParam(required = false) Integer noticeId, Model model){
         Notice notice = noticeService.queryNoticeById(noticeId);
@@ -86,7 +107,7 @@ public class NoticeController {
         return "notice/noticemodify";
     }
 
-    @LoggerAnno(operatorType = "更新员工信息")
+    @LoggerAnno(operatorType = "修改公告信息")
     @RequestMapping("/updatenotice")
     public String updateSuss(Notice notice,Model model){
         boolean result = noticeService.updateNotice(notice);

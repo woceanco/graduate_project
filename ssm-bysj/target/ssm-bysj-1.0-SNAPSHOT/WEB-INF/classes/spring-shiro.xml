@@ -23,7 +23,7 @@
     </bean>
 
     <!-- 配置shiro的过滤器链(拦截)  id必须和web.xml中的 shiro 拦截器名一致-->
-    <bean id="shiroFilter" class="org.apache.shiro.spring.web.ShiroFilterFactoryBean">
+                                  <bean id="shiroFilter" class="org.apache.shiro.spring.web.ShiroFilterFactoryBean">
         <!-- Shiro的核心安全接口,这个属性是必须的 -->
         <property name="securityManager" ref="securityManager" />
         <!-- 身份认证失败，则跳转到登录页面的配置 -->

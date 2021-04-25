@@ -3,6 +3,7 @@
 //var ruserPassword = null;
 var phone = null;
 var userName = null;
+var loginName = null;
 var email = null;
 //var birthday = null;
 //var userRole = null;
@@ -14,6 +15,7 @@ var backBtn = null;
 
 
 $(function () {
+    loginName = $("#loginName");
     userName = $("#userName");
     phone = $("#phonenumber");
     email = $("#email");
@@ -28,6 +30,25 @@ $(function () {
     dept.next().html("*");
     role.next().html("*");
     phone.next().html("*");
+
+        $.ajax({
+            type:"GET",//请求类型
+            url:"/user/loginName",//请求的url
+            data:{loginName:loginName.val()},//请求参数
+            dataType:"json",//ajax接口（请求url）返回的数据类型
+            success:function(data){//data：返回数据（json对象）
+                if(data.loginName == "exist"){//供应商编码已存在，错误提示
+                    validateTip(loginName.next(),{"color":"red"},imgNo+ " 登录账号已存在",false);
+                }else{//供应商编码可用，正确提示
+                    validateTip(loginName.next(),{"color":"green"},imgYes+" 可以使用",true);
+                }
+            },
+            error:function(data){//当访问时候，404，500 等非200的错误状态码
+                validateTip(loginName.next(),{"color":"red"},imgNo+" 您访问的页面不存在",false);
+            }
+        });
+
+
     $.ajax({
         type: "GET",//请求类型
         url: path + "/post/postlist",//请求的url

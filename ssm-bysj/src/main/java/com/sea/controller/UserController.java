@@ -94,6 +94,23 @@ public class UserController {
         return mapper.writeValueAsString(map);
     }
 
+    @RequestMapping("/loginName")
+    @ResponseBody
+    public String queryLoginName(@RequestParam(required = false) String loginName) throws JsonProcessingException {
+
+        ObjectMapper mapper = new ObjectMapper();
+        Map<String, String> map = new HashMap<>();
+        User user = userService.queryByLoginName(loginName);
+
+        if (user != null){
+            map.put("loginName","exist");
+            //return "user/userlist";
+            return mapper.writeValueAsString(map);
+        }
+        map.put("loginName","noexist");
+        return mapper.writeValueAsString(map);
+    }
+
     @LoggerAnno(operatorType = "添加员工")
     @RequestMapping("/add")
     public String add(User user,Model model){
@@ -114,7 +131,7 @@ public class UserController {
     }
 
     @RequestMapping("/update")
-    public String update(@RequestParam(required = false) Integer userId,Model model){
+    public String update(@RequestParam(required = false) int userId,Model model){
         User user = userService.queryById(userId);
         UserRole userRole = userRoleMapper.selectUserRole(userId);
         user.setRoleId(userRole.getRoleId());

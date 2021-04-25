@@ -19,7 +19,7 @@ public interface UserService {
 
     User queryById(int id);
 
-    User queryByLogin(@Param("loginName") String loginName);
+    User queryByLoginName(@Param("loginName") String loginName);
 
     boolean updatePassword(String loginName, String password);
 
